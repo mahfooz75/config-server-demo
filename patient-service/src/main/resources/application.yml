@@ -3,8 +3,17 @@ spring:
     name: patient-service
   config:
     import: optional:configserver:http://localhost:8888
+  cloud:
+    bus:
+      refresh:
+        enabled: true
+  kafka:
+    bootstrap-servers: http://localhost:9092
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+logging:
+  level:
+    org.springframework.cloud: debug

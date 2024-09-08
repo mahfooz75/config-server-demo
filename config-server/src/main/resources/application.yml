@@ -7,6 +7,11 @@ spring:
         git:
           uri: https://github.com/mahfooz75/external-config.git
           default-label: master
+    bus:
+      env:
+        enabled: true
+  kafka:
+    bootstrap-servers: http://localhost:9092
 server:
   port: 8888
 
@@ -15,4 +20,6 @@ management:
     web:
       exposure:
         include: "*"
-
+logging:
+  level:
+    org.springframework.cloud: debug
